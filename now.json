@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "builds": [{ "src": "todos-api.js", "use": "@now/node-server" }],
+  "routes": [
+    {
+      "src": "/.*",
+      "dest": "/todos-api.js",
+      "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+      "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept",
+        "Access-Control-Allow-Credentials": "true"
+      }
+    }
+  ]
+}
